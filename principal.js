@@ -22,8 +22,25 @@ const lerNumeros = (itens) => {          // Declaração de `Arrow Function`
     return numeros;
 }
 
-const numeros = lerNumeros(11);
+const escreverNumeros = function(numeros) {
+    for(j = 0; j < numeros.length; j++){
+        console.log(numeros[j]);
+    };
+};
 
-for(j = 0; j < numeros.length; j++){    // Essa estrutura de repetição está imprimindo os números inseridos pelo usuário.
-    console.log(numeros[j]);
-}                                    // O script está coletando 10 números do usuário e imprimindo-os na tela, junto com o total de números inseridos.
+ordenarDecrescente = (numeros) => {
+    for(i = 0; i < numeros.length; i++){
+        for(j = 0; j < numeros.length; j++){
+            if(numeros[i] > numeros[j]){
+                const temp = numeros[i]
+                numeros[i] = numeros[j]
+                numeros[j] = temp
+            }
+        }
+    }
+    return numeros;
+};    
+
+const numeros = lerNumeros(3);
+const numerosOrdenados = ordenarDecrescente(numeros);
+escreverNumeros(numeros);
