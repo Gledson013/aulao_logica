@@ -3,25 +3,26 @@ exemplo 01
 [X] Entrada de dados
 [ ] Declaração de vetor
 [ ] Declaração de função
-[ ] Declaração de `Function Expression`
-[ ] Declaração de `Arrow Function`
+[X] Declaração de `Function Expression`
+[X] Declaração de `Arrow Function`
 [X] Saída de dados
 [ ] Generator Functions
 */
 
 const prompt = require('prompt-sync')();
 
-// let nome = prompt('Digite o seu nome: ');  // entrada de dados
-// console.log("Voce inseriu " + nome);       // saída de dados
-
-const numeros = [];
-
-for(i = 0; i < 10; i++){          // Essa estrutura de repetição está coletando 10 números do usuário e armazenando-os em um vetor.
-    const numero = prompt("Digite um número: ");
-    numeros[i] = numero;
+//function lerNumeros(itens) {           // Declaração de `Function Declaration`
+//const lerNumeros = function(itens) {   // Declaração de `Function Expression`
+const lerNumeros = (itens) => {          // Declaração de `Arrow Function`
+    const numeros = [];
+    for(i = 0; i < itens; i++){
+        const numero = prompt("Digite um número: ");
+        numeros[i] = numero;
+    }
+    return numeros;
 }
 
-console.log(numeros.length);
+const numeros = lerNumeros(11);
 
 for(j = 0; j < numeros.length; j++){    // Essa estrutura de repetição está imprimindo os números inseridos pelo usuário.
     console.log(numeros[j]);
